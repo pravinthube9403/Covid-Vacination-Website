@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Box Section</title>
+  <style>
+    /* Wrapper background change on hover */
+    .quote-box-wrapper {
+      background: transparent;
+      transition: background 0.3s ease;
+      padding: 40px;
+    }
+
+    /* Modern browsers support */
+    .quote-box-wrapper:has(.box:hover) {
+      background: rgba(62, 60, 60, 0.15);
+    }
+
+    /* Flex container */
+    .vc-bottom-lt-box {
+      display: flex;
+      align-items: flex-end;
+      gap: 30px;
+      flex-wrap: wrap;
+      min-height: 498px;
+      transition: 0.3s;
+    }
+
+    .last-two-box {
+      display: flex;
+      align-items: flex-end;
+      gap: 30px;
+    }
+
+    /* Box styling */
+    .box {
+      padding: 39.92px 52.89px 58.88px 39.92px;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      border-radius: 49px;
+      transform-origin: bottom center;
+      min-height: 363px;
+      flex: 1 1 349px;
+      max-width: 349px;
+      transition: 0.9s all ease;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .box-svg {
+      stroke: #FFFFFF;
+    }
+
+    .box-img {
+      background-color: rgba(196, 196, 196, 0.1);
+      padding: 10px;
+      max-width: fit-content;
+      margin-bottom: 39px;
+    }
+
+    .box-heading {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 23px;
+      color: #FFFFFF;
+      margin-bottom: 52px;
+      display: block;
+    }
+
+    .box-read-more {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    /* Hover effects */
+    .box:hover {
+      border-radius: 49px 149px 49px 49px;
+      background-color: rgba(196, 196, 196, 0.2);
+      border: none;
+    }
+
+    .box:hover .box-svg path {
+      stroke: #17C2EC;
+    }
+
+    .box:hover .hide {
+      display: none;
+    }
+
+    .box:hover .hide-elememt-para,
+    .box:hover .hide-element-heading {
+      display: block;
+    }
+
+    .box:hover .box-read-more {
+      color: #17C2EC;
+    }
+
+    /* Hidden text default */
+    .hide-element-heading {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 24px;
+      color: #17C2EC;
+      margin-bottom: 29px;
+      display: none;
+      transition: 0.9s all ease;
+    }
+
+    .hide-elememt-para {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #FFFFFF;
+      margin-bottom: 39px;
+      display: none;
+      transition: 0.9s all ease;
+    }
+
+    body {
+      background: #0B153C;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quote-box-wrapper">
+    <div class="vc-bottom-lt-box">
+
+      <div class="vc-first box">
+        <div class="vc-first-img box-img">
+          <svg class="box-svg" width="51" height="63" viewBox="0 0 51 63" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M25.6653 60.9044C25.6653 60.9044 48.9501 49.262 48.9501 31.7984V11.4242L25.6653 2.69238L2.38049 11.4242V31.7984C2.38049 49.262 25.6653 60.9044 25.6653 60.9044Z"
+              stroke="#FFFFFF" stroke-width="3.99168" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <span class="vc-first-head box-heading hide">Minimize the spread of the Virus</span>
+        <span class="hide-element-heading">Protects your immune system against viruses</span>
+        <p class="hide-elememt-para">Velit ut consectetur mauris, orci amet,
+          faucibus. Sit turpis fringilla ipsum pretium,
+          dictum. Dolor eget vel nulla lorem ac.</p>
+
+        <a href="#" class="vc-second-red box-read-more">Read More
+          <svg class="box-svg" width="31" height="31" viewBox="0 0 31 31" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path class="box-svg" d="M6.68191 15.0999H24.1455" stroke="white"
+              stroke-opacity="0.5" stroke-width="1.99584" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M15.4137 6.36804L24.1455 15.0999L15.4137 23.8317" stroke="white"
+              stroke-opacity="0.5" stroke-width="2.99376" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="last-two-box">
+
+        <div class="vc-second box">
+          <div class="vc-second-img box-img">
+            <!-- SVG Content -->
+          </div>
+          <span class="vc-second-head box-heading hide">Minimize the spread of the Virus</span>
+          <span class="hide-element-heading">Protects your immune system against viruses</span>
+          <p class="hide-elememt-para">Velit ut consectetur mauris, orci amet,
+            faucibus. Sit turpis fringilla ipsum pretium,
+            dictum. Dolor eget vel nulla lorem ac.</p>
+
+          <a href="#" class="vc-second-red box-read-more">Read More
+            <svg class="box-svg" width="31" height="31" viewBox="0 0 31 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="box-svg" d="M6.68191 15.0999H24.1455" stroke="white"
+                stroke-opacity="0.5" stroke-width="1.99584" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.4137 6.36804L24.1455 15.0999L15.4137 23.8317" stroke="white"
+                stroke-opacity="0.5" stroke-width="2.99376" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="vc-third box">
+          <div class="vc-third-img box-img">
+            <!-- SVG Content -->
+          </div>
+          <span class="vc-third-head box-heading hide">Protect yourself</span>
+          <span class="hide-element-heading">Protects your immune system against viruses</span>
+          <p class="hide-elememt-para">Velit ut consectetur mauris, orci amet,
+            faucibus. Sit turpis fringilla ipsum pretium,
+            dictum. Dolor eget vel nulla lorem ac.</p>
+
+          <a href="#" class="vc-third-red box-read-more">Read More
+            <svg class="box-svg" width="31" height="31" viewBox="0 0 31 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.68191 15.0999H24.1455" stroke="white" stroke-opacity="0.5"
+                stroke-width="1.99584" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M15.4137 6.36804L24.1455 15.0999L15.4137 23.8317" stroke="white"
+                stroke-opacity="0.5" stroke-width="2.99376" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

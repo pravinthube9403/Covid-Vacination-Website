@@ -1,0 +1,2175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bold: 'Bold-Montserrat';
+    --medium: 'Medium-Montserrat';
+    --extra-bold: 'Extra-Bold-Montserrat';
+    --semi-bold: 'Semi-Bold-Montserrat';
+    --regular: 'Regular-Montserrat';
+}
+
+.container {
+    max-width: 1330px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#home-section {
+    position: relative;
+}
+
+#home-section>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.section-wrapper {
+    position: relative;
+    padding-top: 41px;
+}
+
+.logo {
+    font-family: var(--bold);
+    font-size: 2rem;
+    color: #FFFFFF;
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.logo:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #17C2EC;
+    transition: 0.3s;
+}
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6.25rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation>li {
+    list-style: none;
+}
+
+.navigation li a {
+    font-family: var(--medium);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    padding-bottom: 0.625rem;
+    transition: 0.3s;
+}
+
+.navigation li:not(:last-child) {
+    margin-right: 1.5625rem;
+}
+
+.navigation li a:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: #17C2EC;
+    transition: 0.3s;
+}
+
+.navigation li.menu-active a:before {
+    width: 0.625rem;
+}
+
+.navigation li.menu-active a {
+    color: #FFFFFF;
+}
+
+.menu-btn {
+    font-family: var(--bold);
+    font-size: 1.5rem;
+    border-radius: 1.25rem;
+    background-color: #C4C4C41A;
+    color: #17C2EC;
+    padding: 1.25rem 1.625rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* sidebar */
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+
+.hamburger>i {
+    color: #FFFFFF;
+    font-size: 28px;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    z-index: 999;
+    background-color: var(--backdrop-color);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: 0.5s all ease;
+}
+
+.sidebar.sidebar-active {
+    right: 0;
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.close-icon {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.close-icon>i {
+    font-size: 24px;
+    color: var(--home-heading-color);
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar ul li {
+    list-style: none;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    color: var(--home-heading-color);
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* Home-Content Start Here */
+.home-left-content {
+    width: 48%;
+}
+
+.home-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-first-desc {
+    font-family: var(--bold);
+    font-size: 1.5rem;
+    color: #17C2EC;
+    margin-bottom: 2.5rem;
+}
+
+
+.home-left-content-heading {
+    font-family: var(--extra-bold);
+    font-size: 3rem;
+    color: #FFFFFF;
+    display: inline-grid;
+    margin-bottom: 3.125rem;
+}
+
+.home-left-content-heading>span {
+    color: #17C2EC;
+}
+
+.home-second-desc {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3.125rem;
+}
+
+.home-left-content-btn-wrap {
+    margin-bottom: 7px;
+}
+
+.home-btn {
+    padding: 20px 25px;
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #FFFFFF;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-first {
+    border: none;
+    background-color: #17C2EC;
+    margin-right: 20px;
+}
+
+.btn-second {
+    background-color: rgba(196, 196, 196, 0.1);
+    border: 2px solid #17C2EC;
+}
+
+
+
+.home-img-wrap {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.right-content {
+    width: 48%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-content-second-img {
+    position: absolute;
+    right: -41px;
+    top: 42%;
+    transform: translateY(-42%);
+    padding: 13px 10px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.right-content-first-img {
+    position: absolute;
+    left: -49px;
+    top: 42%;
+    transform: translateY(-42%);
+    padding: 13px 10px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+
+.right-content-doctors {
+    position: absolute;
+    bottom: 0;
+    left: -49px;
+    padding: 20px 33px 20px 20px;
+    background-color: rgba(196, 196, 196, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.right-content-doctors:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.right-content-doc-img-second {
+    margin-left: -6px;
+}
+
+.right-content-doc-img-third {
+    margin-left: -6px;
+}
+
+.doc-content {
+    margin-left: 20px;
+}
+
+.doctors-count {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.doctors-type {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #17C2EC;
+    display: block;
+}
+
+
+
+
+.bottom-title-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+}
+
+.bottom-title-wrap>img {
+    padding: 0.625rem 0.625rem;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 0.625rem;
+    margin-right: 1.25rem;
+}
+
+.bottom-title {
+    font-family: var(--bold);
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+
+.home-cards-wrapper {
+    padding-top: 0.625rem;
+    background-color: rgba(196, 196, 196, 0.05);
+    border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.home-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 2.5rem 2.5625rem 2.5rem;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.img-wrapper {
+    padding: 0.625rem;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 0.625rem;
+    margin-right: 1.25rem;
+}
+
+.img-wrapper>img {
+    width: 100%;
+}
+
+.bottom-card-content>p {
+    font-family: var(--semi-bold);
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.bottom-card-content>span {
+    font-family: var(--bold);
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+.bottom-btn {
+    background-color: #17C2EC;
+    border: none;
+}
+
+/* Logos section srtart heere */
+
+#logos-section {
+    background-color: #FFFFFF;
+}
+
+.logos-wrapper {
+    padding: 21px 0;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Form Section Start Here */
+
+#form-section {
+    position: relative;
+}
+
+#form-section>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.form-section-wrapper {
+    padding: 63px 0;
+}
+
+.form-title-wrap {
+    padding: 36px 0 36px 93px;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 20px 20px 0 0;
+}
+
+.form-title {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.form-section-content-wrap {
+    background-color: rgba(196, 196, 196, 0.05);
+    border-radius: 0 0 20px 20px;
+    padding: 35px 0 35px 93px;
+}
+
+.form-sec {
+    margin-bottom: 35px;
+}
+
+
+.form-sec>input {
+    padding: 29px 0 29px 25px;
+    border-radius: 20px;
+    border: 3px solid rgba(196, 196, 196, 0.15);
+    min-width: 406px;
+    margin-right: 20px;
+    font-family: var(--medium);
+    font-size: 20px;
+    background: none;
+    color: #FFFFFF;
+}
+
+.form-sec>input::placeholder {
+    font-size: 14px;
+    color: rgba(196, 196, 196, 0.6);
+}
+
+.form-sec>input:focus {
+    border-color: #17C2EC;
+    outline: none;
+    color: #FFFFFF;
+}
+
+
+.form-btn {
+    font-family: var(--bold);
+    font-size: 24px;
+    padding: 20px 46px;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 20px;
+    border: 3px solid #17C2EC;
+    color: #17C2EC;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-btn:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-bottom-content {
+    padding: 20px;
+    background-color: rgba(196, 196, 196, 0.05);
+    display: inline-block;
+    border-radius: 20px;
+    width: 93%;
+    text-align: center;
+}
+
+.form-desc {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #17C2EC;
+}
+
+.form-desc>a {
+    color: #17C2EC;
+}
+
+
+/* Vaccine Today SAection start here */
+
+#vaccine-today-section {
+    position: relative;
+}
+
+#vaccine-today-section>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.vaccine-today-wrapper {
+    padding: 57px 0 80px 0;
+}
+
+.vaccine-today-top-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.vc-top-content-heading {
+    font-family: var(--bold);
+    font-size: 47.9px;
+    color: #FFFFFF;
+    width: 60%;
+}
+
+.vc-top-content-desc {
+    font-family: var(--medium);
+    font-size: 19.96px;
+    color: rgba(255, 255, 255, 0.5);
+    width: 40%;
+}
+
+
+
+.vc-bottom-lt-box {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    min-height: 523px;
+    transition: 0.3s;
+}
+
+.last-two-box {
+    display: flex;
+    align-items: end;
+}
+
+.hide-element-heading {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #17C2EC;
+    margin-bottom: 29px;
+    display: none;
+    transition: 0.9s all ease;
+}
+
+.hide-elememt-para {
+    font-family: var(--medium);
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 39px;
+    transition: 0.9s all ease;
+    display: none;
+
+}
+
+.box {
+    padding: 39.92px 52.89px 58.88px 39.92px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 49px;
+    transform-origin: bottom center;
+    min-height: 363px;
+    max-height: 100%;
+    min-width: 349px;
+    max-width: 349px;
+    flex: 1;
+    transition: 0.9s all ease;
+}
+
+.box-svg {
+    stroke: #FFFFFF;
+}
+
+.box:hover .box-svg path {
+    stroke: #17C2EC;
+}
+
+.box:hover .hide {
+    display: none;
+}
+
+.box:hover .hide-elememt-para,
+.box:hover .hide-element-heading {
+    display: block;
+}
+
+.box:hover {
+    border-radius: 49px 149px 49px 49px;
+    background-color: rgba(196, 196, 196, 0.2);
+    border: none;
+    max-height: 449px;
+    max-width: 449px;
+
+}
+
+.box:hover .box-read-more {
+    color: #17C2EC;
+}
+
+.vc-bottom-lt-box .box:not(:last-child) {
+    margin-right: 74px;
+}
+
+.box-img {
+    background-color: rgba(196, 196, 196, 0.1);
+    padding: 10px;
+    max-width: fit-content;
+    margin-bottom: 39px;
+    border-radius: 29px;
+}
+
+.box-heading {
+    font-family: var(--bold);
+    font-size: 23px;
+    color: #FFFFFF;
+    margin-bottom: 52px;
+    display: block;
+}
+
+.box-read-more {
+    font-family: var(--bold);
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+/* Vaccine Registration Form  start here*/
+
+#vaccine-registration {
+    position: relative;
+}
+
+#vaccine-registration>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.vaccine-registration-wrapper {
+    padding: 40px 0 33px 0;
+}
+
+.reg-heading {
+    font-family: var(--bold);
+    font-size: 48px;
+    color: #000000;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.img-reg-heading {
+    display: none;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vcg-form-sec {
+    width: 50%;
+}
+
+.vcg-pat-name {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.vcg-name-input {
+    padding: 20px;
+    border: none;
+    background-color: rgba(11, 21, 60, 0.15);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    font-family: var(--medium);
+    font-size: 24px;
+}
+
+.vcg-name-input:focus {
+    border: none;
+    outline: none;
+    color: #000000;
+}
+
+.vcg-pat-num {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+
+
+.vcg-form-sec>label {
+    display: block;
+}
+
+.vcg-form-num-desc {
+    font-family: var(--medium);
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.vcg-mob-num-input {
+    padding: 20px;
+    border: none;
+    background-color: rgba(11, 21, 60, 0.15);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    margin-right: 36px;
+    font-family: var(--medium);
+    font-size: 24px;
+}
+
+.vcg-mob-num-input:focus {
+    border: none;
+    outline: none;
+    color: #000000;
+}
+
+
+
+.vcg-form-btn-1 {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #FFFFFF;
+    padding: 20px 70px;
+    background-color: #17C2EC;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vcg-form-btn-1:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.vcg-form-btn-2 {
+    display: block;
+    padding: 20px 0;
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #FFFFFF;
+    background-color: #17C2EC;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.vcg-form-btn-2:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-img-wrapper {
+    width: 50%;
+}
+
+.registration-wrap {
+    text-align: center;
+}
+
+.registration-wrap>span {
+    font-family: var(--semi-bold);
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 46px;
+}
+
+.registration-wrap>a {
+    font-family: var(--bold);
+    font-size: 20px;
+    color: #17C2EC;
+    text-decoration: none;
+}
+
+
+.form-imgs {
+    position: relative;
+    max-width: 401px;
+}
+
+.main-img-top-content {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #FFFFFF;
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    transform: translateX(-60%);
+}
+
+.form-img-bottom-content {
+    font-family: var(--bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 13px 33px;
+    background-color: rgba(196, 196, 196, 0.25);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 3.875rem;
+    left: 24%;
+    cursor: pointer;
+}
+
+.form-img-bottom-content:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Symptoms section start here */
+
+#symptoms {
+    position: relative;
+}
+
+#symptoms>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.sym-content-top-wrap {
+    padding-top: 57px;
+}
+
+.sym-content {
+    text-align: center;
+}
+
+.sym-heading-one {
+    font-family: var(--bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.sym-heading-two {
+    font-family: var(--extra-bold);
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.sym-heading-two>span {
+    color: #17C2EC;
+}
+
+.sym-desc {
+    font-family: var(--medium);
+    font-size: 24px;
+    color: rgba(196, 196, 196, 0.25);
+    margin: 0 auto 179px auto;
+    max-width: 61ch;
+}
+
+
+
+
+
+
+
+.sym-content-bottom-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.sym-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+}
+
+.sym-card>img {
+    position: absolute;
+    left: -16px;
+}
+
+.sym-card>span {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-family: var(--medium);
+    font-size: 20px;
+    color: #17C2EC;
+}
+
+.sym-first-card {
+    top: 10%;
+    left: 10%;
+}
+
+.sym-first-card>span {
+    padding: 23px 61px 23px 127px;
+}
+
+.sym-second-card {
+    top: 10%;
+    right: 7%;
+}
+
+.sym-second-card>span {
+    padding: 23px 33px 23px 111px;
+}
+
+.sym-third-card {
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sym-third-card>span {
+    padding: 23px 18px 23px 85px;
+}
+
+.sym-fourth-card {
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sym-fourth-card>span {
+    padding: 23px 20px 23px 102px;
+}
+
+.sym-five-card {
+    bottom: 10%;
+    left: 10px;
+}
+
+.sym-five-card>span {
+    padding: 23px 52px 23px 115px;
+}
+
+.sym-six-card {
+    bottom: 10%;
+    right: 0;
+}
+
+.sym-six-card>span {
+    padding: 23px 57px 23px 124px;
+}
+
+/* Feedback section start here */
+
+
+
+#feedback {
+    position: relative;
+}
+
+#feedback>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.feedback-wrapper {
+    padding-top: 57px;
+    padding-bottom: 250px;
+}
+
+.feedback-img-wrapper {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1299px;
+}
+
+.feedback-top-content {
+    text-align: center;
+}
+
+.feedback-heading-one {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #17C2EC;
+    margin-bottom: 20px;
+}
+
+.feedback-heading-two {
+    font-family: var(--extra-bold);
+    font-size: 48px;
+    color: #000000;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.feedback-desc {
+    font-family: var(--medium);
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 100px;
+}
+
+
+.feedback-cards-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 106px;
+}
+
+.feedback-card {
+    padding: 30px 33px 44px 30px;
+    background-color: rgba(196, 196, 196, 0.5);
+    border-radius: 20px;
+    margin-right: 45px;
+    position: relative;
+    z-index: 10;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+.feedback-card:hover {
+    background-color: #17C2EC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+}
+
+.feedback-card:hover h5,
+.feedback-card:hover p {
+    color: #FFFFFF;
+}
+
+.fed-card-top-content-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.fed-card-top-content-wrap>img {
+    margin-right: 20px;
+}
+
+.fed-card-heading-wrap>h5 {
+    font-family: var(--bold);
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.fed-card-heading-wrap>p {
+    font-family: var(--bold);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.feedback-card>p {
+    font-family: var(--medium);
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Quote Box section start here */
+#quote-box-main {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -217px;
+    z-index: 9999;
+}
+
+.quote-box-wrapper {
+    padding: 17px;
+    background: rgba(196, 196, 196, 0.15);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.quote-box {
+    display: inline-block;
+    padding: 70px 174px 107px 174px;
+    border-radius: 50px;
+    background-color: #17C2EC;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.quote-box-wrapper:hover {
+    background: rgba(62, 60, 60, 0.15);
+}
+
+.quote-heading {
+    font-family: var(--bold);
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.quote-desc {
+    font-family: var(--medium);
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.quote-box-input-row {
+    display: flex;
+}
+
+/* .quote-input {
+    padding: 29px 193px 29px 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px 0 0 30px;
+    font-family: var(--medium);
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.quote-input:focus {
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.25);
+} */
+
+.quote-input {
+    padding: 29px 193px 29px 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px 0 0 30px;
+    font-family: var(--medium);
+    font-size: 20px;
+    color: #000;
+    /* solid black text */
+}
+
+.quote-input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+    /* faded placeholder text */
+}
+
+.quote-input:focus {
+    border: none;
+    outline: none;
+    color: #000;
+    /* keep solid black text even after focus */
+}
+
+.quote-btn {
+    padding: 17px 30px;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background-color: #0B153C;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* footer start here */
+
+#footer {
+    position: relative;
+}
+
+#footer>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.footer-main-wrap {
+    min-height: 500px;
+    position: relative;
+}
+
+
+.footer-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.footer-navigation>li {
+    list-style: none;
+}
+
+.footer-navigation>li:hover a {
+    color: #FFFFFF;
+}
+
+.footer-navigation li a {
+    font-family: var(--medium);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    padding-bottom: 0.625rem;
+    transition: 0.3s;
+}
+
+.footer-navigation li:not(:last-child) {
+    margin-right: 1.5625rem;
+}
+
+
+.footer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 123px;
+    width: 100%;
+}
+
+.footer-social-media {
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-media svg {
+    margin-right: 10px;
+}
+
+@media (max-width:1280px) {
+    .menu-btn {
+        font-size: 20px;
+    }
+
+    .home-btn {
+        font-size: 20px;
+    }
+
+    .right-content-first-img {
+        width: 90px;
+    }
+
+    .right-content-second-img {
+        width: 90px;
+    }
+
+    .doctor {
+        width: 50px;
+    }
+
+    .right-content-doctors {
+        padding: 15px 20px 20px 15px;
+    }
+
+    .home-content-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .bottom-card-content>p {
+        font-size: 18px;
+    }
+
+    .form-sec>input {
+        margin-bottom: 20px;
+    }
+
+    .bottom-card-content>span {
+        font-size: 20px;
+    }
+
+    /* .container{
+        max-width: 1024px;
+    } */
+    .home-img-wrap>img {
+        width: 380px;
+    }
+
+    .home-left-content-heading {
+        font-size: 32px;
+    }
+
+    .home-second-desc {
+        font-size: 21px;
+    }
+
+    .feedback-card {
+        margin-right: 17px;
+    }
+
+    .vcg-form-btn-1 {
+        margin-bottom: 10px;
+    }
+
+    .vc-first {
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width:1024px) {
+    .feedback-card {
+        margin-right: 17px;
+    }
+
+    .footer-social-media svg {
+        margin-right: 0;
+    }
+}
+
+@media (max-width:991px) {
+    .header>nav {
+        display: none;
+    }
+
+    .header>a {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header {
+        margin-bottom: 31px;
+    }
+
+    .logo {
+        font-size: 1.5938rem;
+    }
+
+    /* home section */
+
+    .home-content-wrapper {
+        flex-direction: column;
+    }
+
+    .home-left-content-heading {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .home-second-desc {
+        font-size: 18px;
+        margin-bottom: 2.5rem;
+    }
+
+    .home-btn {
+        font-size: 20px;
+    }
+
+    .home-left-content {
+        margin: 0 0 55px 0;
+        width: 66%;
+    }
+
+
+    .right-content {
+        width: 100%;
+        margin: 0 auto 39px auto;
+    }
+
+    .bottom-title-wrap {
+        margin-bottom: 41px;
+    }
+
+    .home-cards {
+        padding: 37px 36px 45px 12px;
+        flex-wrap: wrap;
+    }
+
+    .bottom-card-content>p {
+        font-size: 20px;
+    }
+
+    .bottom-card-content>span {
+        font-size: 20px;
+    }
+
+    .location {
+        margin-bottom: 41px;
+    }
+
+    .calender {
+        margin-bottom: 41px;
+    }
+
+    .vacine {
+        margin-bottom: 41px;
+    }
+
+    .bottom-btn {
+        padding: 20px 88px;
+    }
+
+
+    /* form section */
+    .form-section-wrapper {
+        padding: 57px 0;
+    }
+
+    .form-sec {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-title-wrap {
+        padding: 18px 0 13px 0;
+        text-align: center;
+    }
+
+    .form-section-content-wrap {
+        padding: 35px 0 35px 0;
+        text-align: center;
+    }
+
+    .form-sec {
+        margin-bottom: 50px;
+        align-items: center;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-btn {
+        font-size: 20px;
+        padding: 20px 52px;
+    }
+
+    .form-desc {
+        font-size: 14px;
+    }
+
+    .form-sec>input {
+        max-width: 450px;
+        margin-bottom: 20px;
+    }
+
+    .form-sec>input {
+        padding: 20px 0 25px 25px;
+    }
+
+    /* Vaccine-today section */
+    .vaccine-today-top-content {
+        flex-direction: column;
+    }
+
+    .vc-bottom-lt-box .box:not(:last-child) {
+        margin-right: 37px;
+    }
+
+    .vc-top-content-heading {
+        margin-bottom: 40px;
+        font-size: 36px;
+    }
+
+
+    .vc-top-content-desc {
+        width: 56%;
+    }
+
+
+    /* vaccine-Registration section start here */
+    .form-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .form-img-wrap {
+        margin-bottom: 70px;
+    }
+
+    .vcg-form-sec {
+        width: 100%;
+    }
+
+    .main-img-top-content {
+        font-size: 20px;
+    }
+
+    .reg-heading {
+        display: none;
+    }
+
+    .img-reg-heading {
+        font-family: var(--bold);
+        font-size: 36px;
+        color: #000000;
+        display: inline-block;
+        margin-bottom: 40px;
+        width: 80%;
+    }
+
+    .vcg-pat-name {
+        font-size: 20px;
+    }
+
+    .vcg-pat-num {
+        font-size: 20px;
+    }
+
+    .vcg-form-btn-1 {
+        font-size: 20px;
+    }
+
+    .vcg-form-btn-2 {
+        font-size: 20px;
+    }
+
+    .form-imgs>img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* symptoms section start here */
+    .sym-heading-two {
+        font-size: 36px;
+    }
+
+    .sym-desc {
+        margin: 0 auto 60px auto;
+        font-size: 18px;
+    }
+
+    .sym-card>img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .sym-first-card {
+        left: 18%;
+    }
+
+    .sym-card>span {
+        font-size: 18px;
+    }
+
+    .sym-first-card>span {
+        padding: 12px 16px 13px 47px;
+    }
+
+    .sym-second-card {
+        right: 7%;
+    }
+
+    .sym-second-card>span {
+        padding: 12px 14px 13px 50px;
+    }
+
+    .sym-third-card>span {
+        padding: 12px 11px 11px 51px;
+    }
+
+    .sym-fourth-card {
+        right: 2%;
+    }
+
+    .sym-fourth-card>span {
+        padding: 12px 8px 12px 51px;
+    }
+
+    .sym-five-card>span {
+        padding: 12px 17px 12px 64px;
+    }
+
+    .sym-six-card>span {
+        padding: 12px 19px 12px 61px;
+    }
+
+    /* Feedbacl section start here */
+    .feedback-wrapper {
+        padding-bottom: 110px;
+    }
+
+    .feedback-img-wrapper {
+        top: 46%;
+        flex-direction: column;
+    }
+
+    .feedback-img-wrapper>img {
+        width: 173px;
+        height: 283px;
+    }
+
+    .feedback-heading-one {
+        font-size: 20px;
+    }
+
+    .feedback-heading-two {
+        font-size: 36px;
+    }
+
+    .feedback-desc {
+        font-size: 18px;
+    }
+
+    .feedback-cards-wrap {
+        flex-direction: column;
+    }
+
+    .feedback-card {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .fed-card-heading-wrap>h5 {
+        font-size: 20px;
+    }
+
+    /* Quote box-section */
+    #quote-box-main {
+        bottom: -177px;
+    }
+
+    .quote-box {
+        padding: 16px 48px 56px 62px;
+    }
+
+    /* footer start */
+    .footer-wrapper {
+        align-items: flex-start;
+        position: absolute;
+        bottom: 50px;
+        flex-direction: column;
+    }
+
+    .footer-logo-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .footer-navigation {
+        margin-bottom: 40px;
+    }
+
+    .footer-social-media svg {
+        width: 31px;
+        height: auto;
+        margin-right: 6px;
+    }
+}
+
+
+
+
+@media (max-width:767px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    /* Home section start */
+
+    .home-left-content {
+        width: 100%;
+    }
+
+    .img-wrap img:first-of-type {
+        width: 100%;
+    }
+
+    .home-first-desc {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .home-left-content-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .home-second-desc {
+        font-size: 14px;
+    }
+
+    .home-btn {
+        font-size: 14px;
+        padding: 16px 25px;
+    }
+
+    .doctors-count {
+        font-size: 14px;
+    }
+
+    .doctors-type {
+        font-size: 14px;
+    }
+
+    .bottom-title {
+        font-size: 14px;
+    }
+
+    .bottom-card-content>p {
+        font-size: 14px;
+    }
+
+    .bottom-card-content>span {
+        font-size: 14px;
+    }
+
+    .bottom-title-wrap {
+        margin-bottom: 20px;
+    }
+
+
+    /* form section start */
+
+    .form-section-content-wrap {
+        padding: 18px 0 35px 13px;
+    }
+
+    .form-title-wrap {
+        padding: 18px 0 13px 0;
+        text-align: center;
+    }
+
+    .form-title {
+        font-size: 12px;
+    }
+
+    .form-sec>input {
+        min-width: 323px;
+        padding: 16px 0 16px 21px;
+    }
+
+    .form-btn {
+        font-size: 14px;
+    }
+
+    .form-desc {
+        font-size: 12px;
+    }
+
+    .form-bottom-content {
+        padding: 25px;
+    }
+
+
+
+
+
+
+    /* vaccine today start here */
+
+    .vc-top-content-heading {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .vc-top-content-desc {
+        font-size: 14.96px;
+        width: 100%;
+    }
+
+    .vc-bottom-lt-box {
+        justify-content: center
+    }
+
+    .last-two-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .vc-second {
+        margin-bottom: 30px;
+    }
+
+    .vc-bottom-heading {
+        font-size: 14px;
+    }
+
+    .vc-bottom-desc {
+        font-size: 12px;
+    }
+
+    .vc-read-more {
+        font-size: 12px;
+    }
+
+    .vc-second-box-heading {
+        font-size: 14px;
+    }
+
+    .vc-second-box-read-more {
+        font-size: 14px;
+    }
+
+    .vc-third-box-heading {
+        font-size: 14px;
+    }
+
+    .vc-third-box-read-more {
+        font-size: 14px;
+    }
+
+
+    /* vaccine-registration section start  */
+    .img-reg-heading {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .main-img-top-content {
+        font-size: 14px;
+    }
+
+    .form-img-bottom-content {
+        font-size: 14px;
+    }
+
+    .vcg-pat-name {
+        font-size: 14px;
+    }
+
+    .vcg-name-input {
+        font-size: 18px;
+    }
+
+    .vcg-pat-num {
+        font-size: 14px;
+    }
+
+    .vcg-form-num-desc {
+        font-size: 14px;
+    }
+
+    .vcg-mob-num-input {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .vcg-form-btn-1 {
+        font-size: 14px;
+        padding: 16px 53px;
+        margin-bottom: 60px;
+    }
+
+    .vcg-form-btn-2 {
+        font-size: 14px;
+        padding: 16 0;
+    }
+
+    .registration-wrap>span {
+        font-size: 14px;
+        margin-right: 46px;
+    }
+
+    .registration-wrap>a {
+        font-size: 14px;
+    }
+
+    /* symptoms section start */
+
+    .sym-heading-one {
+        font-size: 12px;
+    }
+
+    .sym-heading-two {
+        font-size: 24px;
+    }
+
+    .sym-desc {
+        font-size: 12px;
+    }
+
+    .sym-content-bottom-wrap>img {
+        width: 100%;
+        height: auto;
+    }
+
+    .sym-card>span {
+        font-size: 13px;
+    }
+
+    /* feedback-section start */
+    .feedback-wrapper {
+        padding-bottom: 55px;
+    }
+
+    .feedback-heading-one {
+        font-size: 14px;
+    }
+
+    .feedback-heading-two {
+        font-size: 24px;
+    }
+
+    .feedback-desc {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .feedback-img-wrapper {
+        top: 44%;
+    }
+
+    .feedback-img-wrapper>img {
+        width: 145px;
+        height: 227px;
+        margin-bottom: 33px;
+    }
+
+    .feedback-card {
+        margin-right: 0;
+        padding: 22px 25px 33px 25px;
+    }
+
+    .fed-card-heading-wrap>h5 {
+        font-size: 14px;
+    }
+
+    .fed-card-heading-wrap>p {
+        font-size: 10px;
+    }
+
+    .fed-card-top-content-wrap {
+        margin-bottom: 30px;
+    }
+
+    /* quote box start here */
+    #quote-box-main {
+        bottom: -114px;
+    }
+
+    .quote-box-wrapper {
+        padding: 31px 19px;
+        border-radius: 20px;
+    }
+
+
+
+    .quote-box {
+        padding: 16px 24px 28px 23px;
+        border-radius: 10px
+    }
+
+    .quote-input {
+        padding: 14px 26px 16px 12px;
+        font-size: 17px;
+    }
+
+    .quote-heading {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    .quote-desc {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .quote-btn {
+        padding: 10px 23px 10px 11px;
+    }
+
+    .quote-btn>img {
+        width: 33px;
+    }
+
+}
+
+@media (max-width:576px) {
+
+    /* home section */
+    .home-img-wrap>img {
+        width: 256px;
+    }
+
+    .right-content-first-img {
+        left: -32px;
+        width: 65px;
+    }
+
+    .right-content-second-img {
+        right: -32px;
+        width: 65px;
+    }
+
+    .right-content-doctors {
+        padding: 10px 15px 9px 9px;
+        left: -35px;
+    }
+
+    .doctor {
+        width: 42px;
+    }
+
+    /* vaccine section */
+    .box {
+        padding: 22.92px 25.89px 31.88px 21.92px;
+        min-height: 285px;
+        max-height: 100%;
+        min-width: 279px;
+        max-width: 286px;
+    }
+
+    .box:hover {
+        border-radius: 20px 80px 20px 20px;
+    }
+
+    .hide-element-heading {
+        font-size: 16px;
+        margin-bottom: 29px;
+    }
+
+    .hide-elememt-para {
+        font-size: 12px;
+        margin-bottom: 39px;
+    }
+
+    /* symptoms section */
+    .sym-card>span {
+        font-size: 10px;
+    }
+
+    .sym-card>img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sym-first-card {
+        left: 2%;
+    }
+
+    .sym-first-card>span {
+        padding: 9px 13px 9px 34px;
+    }
+
+    .sym-second-card {
+        right: 2%;
+    }
+
+    .sym-second-card>span {
+        padding: 7px 9px 9px 24px;
+    }
+
+    .sym-third-card {
+        left: 2%;
+    }
+
+    .sym-third-card>span {
+        padding: 8px 9px 8px 23px;
+    }
+
+    .sym-fourth-card>span {
+        padding: 8px 8px 8px 25px;
+    }
+
+    .sym-five-card>span {
+        padding: 8px 11px 8px 28px;
+    }
+
+    .sym-six-card>span {
+        padding: 6px 14px 8px 27px;
+    }
+
+    /* vaccine section */
+    .vc-bottom-lt-box .box:not(:last-child) {
+        margin-right: 0;
+    }
+
+    /* feedback section */
+    .feedback-card {
+        width: 100%;
+    }
+
+    /* footer section */
+    #footer>img {
+        height: 350px;
+    }
+
+    .footer-main-wrap {
+        min-height: 350px;
+    }
+
+    .footer-logo-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .footer-wrapper {
+        bottom: 30px;
+    }
+
+    .footer-navigation {
+        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-navigation li a {
+        font-size: 14px;
+    }
+
+    .quote-box-wrapper {
+        padding: 26px 10px;
+    }
+
+    .quote-box {
+        padding: 14px 11px 16px 12px;
+        font-size: 15px;
+    }
+
+    .quote-btn>img {
+        width: 30px;
+    }
+}
